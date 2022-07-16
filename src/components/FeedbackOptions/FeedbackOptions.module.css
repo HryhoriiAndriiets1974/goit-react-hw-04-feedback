@@ -1,0 +1,24 @@
+.btnBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.btn {
+  width: 120px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+  transform: translateY(-2px);
+
+}
