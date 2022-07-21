@@ -11,18 +11,6 @@ function App()  {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const addFeedbackGood = () => {
-    setGood(good + 1);
-  }
-
-  const addFeedbackNeutral = () => {
-    setNeutral(neutral + 1);
-  }
-
-  const addFeedbackBad = () => {
-    setBad(bad + 1);
-  }
-
 const countTotalFeedback = () => {
   return good + neutral + bad;
 };
@@ -31,15 +19,18 @@ const countPositiveFeedbackPercentage = () => {
   return Math.round((good / countTotalFeedback()*100));
 };
 
-const onLeaveFeedback = key => {
-  if (key === 'good') {
-    addFeedbackGood();
-  }
-  if (key === 'neutral') {
-    addFeedbackNeutral();
-  }
-  if (key === 'bad') {
-    addFeedbackBad();
+const onLeaveFeedback = type => {
+  switch (type) {
+    case ('good'):
+      setGood(good + 1);
+      break;
+    case ('neutral'):
+      setNeutral(neutral + 1);
+      break;
+    case ('bad'):
+      setBad(bad + 1);
+      break;
+    default:
   }
 };
 
